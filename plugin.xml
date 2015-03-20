@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin id="org.uottawa.bootstrap.myinfo.index">
+
+  <require plugin="org.uottawa.bootstrap" />
+
+  <template file="map2uohtml5index_template.xml" />
+  <template file="xsl/map2uohtml5index_template.xsl" />
+
+  <feature extension="dita.conductor.transtype.check" value="uohtml5index" type="txt" />
+  <feature extension="dita.conductor.target.relative" file="build.xml" type="file" />
+
+</plugin>

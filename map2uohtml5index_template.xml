@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project name="dita2uohtml5index" default="dita2uohtml5index">
+
+  <property name="transtype" value="uohtml5index"></property>
+
+  <dirname property="dita2uohtml5index.dir" file="${ant.file.dita2uohtml5index}"></dirname>
+
+  <target name="dita2uohtml5index">
+
+    <antcall target="dita2uohtml5">
+      <param name="map2html5.style" value="${dita2uohtml5index.dir}/xsl/map2uohtml5index.xsl"></param>
+      <param name="generateSearchEngine" value="no" />
+    </antcall>
+
+  </target>
+
+</project>
