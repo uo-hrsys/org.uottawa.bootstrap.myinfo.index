@@ -28,8 +28,10 @@
   <xsl:template match="/*[df:class(., 'map/map')]" mode="all-map-processing">
     <xsl:param name="rootMapDocUrl" as="xs:string" tunnel="yes"/>
 
-    <xsl:variable name="documentation-title" as="xs:string">
-        <xsl:apply-templates select="." mode="generate-root-page-header" />
+    <xsl:variable name="title" as="xs:string">
+        <xsl:call-template name="getString">
+              <xsl:with-param name="stringName" select="'employee_group'"/>
+            </xsl:call-template>
     </xsl:variable>
 
     <xsl:variable name="content">
@@ -55,7 +57,7 @@
         <xsl:apply-templates mode="generate-html5-page" select=".">
          <xsl:with-param name="relativePath" select="''" as="xs:string" tunnel="yes"/>
          <xsl:with-param name="content" select="$content" tunnel="yes"/>
-         <xsl:with-param name="topic-title" select="$documentation-title" tunnel="yes"/>
+         <xsl:with-param name="topic-title" select="$title" tunnel="yes"/>
          <xsl:with-param name="result-uri" select="'index.html'" tunnel="yes"/>
          <xsl:with-param name="fullContentWidth" select="true()" tunnel="yes"/>
          <xsl:with-param name="withheader" select="false()" tunnel="yes"/>
