@@ -82,7 +82,9 @@
 			    <div class="box square with-outset with-large-radius">
 		            <div id="{@name}" role="button" class="choose-group-button">
 			            <h2><xsl:value-of select="@othertype"/></h2>
-			            <abbr title="{@othertype}"><xsl:value-of select="upper-case(@name)"/></abbr>
+                  <xsl:if test="@otherjob">
+			              <abbr title="{@othertype}"><xsl:value-of select="@otherjob"/></abbr>
+                  </xsl:if>
 		            </div>
 	            </div>
 	       </a>
