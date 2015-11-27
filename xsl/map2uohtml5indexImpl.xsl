@@ -15,6 +15,10 @@
   <xsl:import href="plugin:org.uottawa.bootstrap:xsl/map2bootstrap.xsl"></xsl:import>
   <xsl:param name="fullContentWidth" select="true()" />
 
+   <xsl:template match="*" mode="d4p-js-properties">
+    <disableNav>true</disableNav>
+  </xsl:template>
+
  <xsl:template match="/">
 
    <xsl:message> + [INFO] Generating index page </xsl:message>
